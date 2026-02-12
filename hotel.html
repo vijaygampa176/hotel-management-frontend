@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Hotel</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background-image: url("https://images.unsplash.com/photo-1566073771259-6a8506099945");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            background: rgba(0,0,0,0.7);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        select, button {
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Select Hotel</h2>
+
+    <select id="hotel">
+        <option value="">Choose Hotel</option>
+        <option>Grand Palace</option>
+        <option>Royal Residency</option>
+        <option>City Comfort</option>
+    </select>
+
+    <br>
+
+    <button onclick="next()">View Details</button>
+    <button onclick="window.location.href='login.html'">Back</button>
+</div>
+
+<script>
+function next() {
+    var hotel = document.getElementById("hotel").value;
+    if(hotel === "") {
+        alert("Select a hotel");
+    } else {
+        localStorage.setItem("hotel", hotel);
+        window.location.href = "hotelinfo.html";
+    }
+}
+</script>
+
+</body>
+</html>

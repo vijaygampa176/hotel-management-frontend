@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel Info</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background-image: url("https://images.unsplash.com/photo-1551882547-ff40c63fe5fa");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            background: rgba(0,0,0,0.7);
+            padding: 40px;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2 id="name"></h2>
+    <p>Location: Hyderabad</p>
+    <p>Facilities: WiFi, AC, Pool, Restaurant</p>
+    <p>Price: ₹2500 / night</p>
+
+    <button onclick="window.location.href='payment.html'">Proceed to Payment</button>
+    <button onclick="window.location.href='hotel.html'">Back</button>
+</div>
+
+<script>
+document.getElementById("name").innerText = localStorage.getItem("hotel");
+</script>
+
+</body>
+</html>
